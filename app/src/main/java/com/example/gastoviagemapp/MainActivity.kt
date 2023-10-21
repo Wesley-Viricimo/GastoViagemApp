@@ -6,13 +6,17 @@ import com.example.gastoviagemapp.databinding.ActivityMainBinding
 
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityMainBinding //lateinit indica que a variável será instanciada posteriormente
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root) //View Binding para conectar layout ao codigo
 
-        var binding: ActivityMainBinding = ActivityMainBinding.inflate(layoutInflater)
 
+    }
 
+    private fun calcular() {
 
     }
 }
