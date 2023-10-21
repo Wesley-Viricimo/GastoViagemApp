@@ -26,7 +26,15 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun calcular() {
-        Toast.makeText(this, "Testando", Toast.LENGTH_SHORT).show()
+        val distancia = binding.edtDistancia.text.toString().toFloat()
+        val preco = binding.edtPreco.text.toString().toFloat()
+        val autonomia = binding.edtAutonomia.text.toString().toFloat()
+
+        val valorTotal = (distancia * preco) / autonomia
+
+        binding.tvValortotal.text = "R$ ${"%.2f".format(valorTotal)}"
+        
+        //Toast.makeText(this, totalValueStr, Toast.LENGTH_SHORT).show()
     }
 
 }
