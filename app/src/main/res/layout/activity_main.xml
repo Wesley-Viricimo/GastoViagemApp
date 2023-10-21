@@ -9,6 +9,7 @@
     tools:context=".MainActivity">
 
     <EditText
+        android:id="@+id/edt_distancia"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -22,6 +23,7 @@
         android:gravity="center"/>
 
     <EditText
+        android:id="@+id/edt_preco"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -35,6 +37,7 @@
         android:gravity="center"/>
 
     <EditText
+        android:id="@+id/edt_autonomia"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -57,6 +60,7 @@
         android:gravity="center"/>
 
     <TextView
+        android:id="@+id/tv_valortotal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/valor_total"
@@ -67,6 +71,7 @@
         android:gravity="center"/>
     
     <Button
+        android:id="@+id/btn_calcular"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="16dp"
