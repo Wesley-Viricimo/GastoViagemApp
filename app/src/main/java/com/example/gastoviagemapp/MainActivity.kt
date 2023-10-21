@@ -25,16 +25,25 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
+    private fun validaCampos() : Boolean {
+        return (binding.edtDistancia.text.toString() != ""
+                && binding.edtPreco.text.toString() != ""
+                && binding.edtAutonomia.text.toString() != ""
+                && binding.edtAutonomia.text.toString().toFloat() != 0f)
+    }
+
     private fun calcular() {
-        val distancia = binding.edtDistancia.text.toString().toFloat()
-        val preco = binding.edtPreco.text.toString().toFloat()
-        val autonomia = binding.edtAutonomia.text.toString().toFloat()
+        if(validaCampos()) {
+            val distancia = binding.edtDistancia.text.toString().toFloat()
+            val preco = binding.edtPreco.text.toString().toFloat()
+            val autonomia = binding.edtAutonomia.text.toString().toFloat()
 
-        val valorTotal = (distancia * preco) / autonomia
+            val valorTotal = (distancia * preco) / autonomia
 
-        binding.tvValortotal.text = "R$ ${"%.2f".format(valorTotal)}"
-        
-        //Toast.makeText(this, totalValueStr, Toast.LENGTH_SHORT).show()
+            binding.tvValortotal.text = "R$ ${"%.2f".format(valorTotal)}"
+        } else {
+            Toast.makeText(this, R.string.preencha_todos_campos, Toast.LENGTH_SHORT).show()
+        }
     }
 
 }
